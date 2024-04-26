@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>Codeforces940C</title>
+    <link href="/2024/04/25/codeforces940D/"/>
+    <url>/2024/04/25/codeforces940D/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Codeforces-940-C"><a href="#Codeforces-940-C" class="headerlink" title="Codeforces 940 C"></a>Codeforces 940 C</h1><p>原题链接：<a href="https://codeforces.com/contest/1957/problem/C">Codeforces 940 C</a></p><p>首先对原棋盘进行预处理，将已经下棋的对应行删除，得到一个n*n的空白棋盘。</p><p>显然如果暴力根本过不了，那么接下来就考虑纯数学方法与dp，这里介绍一下dp。</p><p>设dp[i]为i*i的棋盘的方案数，思考dp[i-1],dp[i-2]与dp[i]的关系。</p><p>可对dp[i]左上角是否为空进行讨论。</p><p>若dp[i]左上角不为空，则左上角不为空的方案数为dp[i-1]，即将dp[i-1]的左上角补一个棋。</p><p>若dp[i]左上角为空，则第一行棋子的摆放可能有n-1种，相应的，第一列的棋子摆放有n-1种。</p><p>即在2*(n-1)中选择一个位置放棋子，然后电脑的棋子放在对应位置，即2*(n-1)*dp[i-2]。</p><p>故dp[i]&#x3D;dp[i-1]+2*(n-1)dp[i-2]。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n,k;<br><span class="hljs-type">int</span> t;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> MOD=<span class="hljs-number">1e9</span>+<span class="hljs-number">7</span>;<br><span class="hljs-type">long</span> <span class="hljs-type">long</span> dp[<span class="hljs-number">300005</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    dp[<span class="hljs-number">1</span>]=<span class="hljs-number">1</span>;<br>    dp[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>;i&lt;=<span class="hljs-number">300005</span>;i++)&#123;<br>        dp[i]=dp[i<span class="hljs-number">-1</span>]+<span class="hljs-number">2</span>*(i<span class="hljs-number">-1</span>)*dp[i<span class="hljs-number">-2</span>];<br>        dp[i]%=MOD;<br>    &#125;<br>    cin&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)&#123;<br>        cin&gt;&gt;n&gt;&gt;k;<br>        <span class="hljs-type">int</span> a,b;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++)&#123;<br>            cin&gt;&gt;a&gt;&gt;b;<br>            <span class="hljs-keyword">if</span>(a==b)n--;<br>            <span class="hljs-keyword">else</span> n-=<span class="hljs-number">2</span>;<br>        &#125;<br>        cout&lt;&lt;dp[n]&lt;&lt;endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+      <tag>Codeforces</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="/2024/03/31/hello-world/"/>
+    <url>/2024/03/31/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>这是一条测试语句</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>日常</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>测试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
