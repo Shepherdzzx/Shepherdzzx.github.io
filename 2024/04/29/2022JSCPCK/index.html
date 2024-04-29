@@ -16,23 +16,22 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Codeforces 940 C首先对原棋盘进行预处理，将已经下棋的对应行删除，得到一个n*n的空白棋盘。 显然如果暴力根本过不了，那么接下来就考虑纯数学方法与dp，这里介绍一下dp。 设dp[i]为i*i的棋盘的方案数，思考dp[i-1],dp[i-2]与dp[i]的关系。 可对dp[i]左上角是否为空进行讨论。 若dp[i]左上角不为空，则左上角不为空的方案数为dp[i-1]，即将dp[i-1">
+    <meta name="description" content="2022 JSCPC K 最构造的一集原题链接：2022 JSCPC K 思路为了方便，将nunhehhe称为x。 当n&#x3D;0时显然随便一个数都可以。 当n&#x3D;1时只需要再原字符串上加一个a即可。 先观察规律，在x后如果补一个h，此h后面a的个数为m，那么这个h的贡献为2^m-1。不是2^m是因为最后不能为空。 补h的作用就是和x最后的作替换，从而转换为一个按位运算的问题，由cnt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces940C">
-<meta property="og:url" content="http://example.com/2024/04/27/Codeforces940C/index.html">
+<meta property="og:title" content="2022JSCPCK">
+<meta property="og:url" content="http://example.com/2024/04/29/2022JSCPCK/index.html">
 <meta property="og:site_name" content="Shepherdz">
-<meta property="og:description" content="Codeforces 940 C首先对原棋盘进行预处理，将已经下棋的对应行删除，得到一个n*n的空白棋盘。 显然如果暴力根本过不了，那么接下来就考虑纯数学方法与dp，这里介绍一下dp。 设dp[i]为i*i的棋盘的方案数，思考dp[i-1],dp[i-2]与dp[i]的关系。 可对dp[i]左上角是否为空进行讨论。 若dp[i]左上角不为空，则左上角不为空的方案数为dp[i-1]，即将dp[i-1">
+<meta property="og:description" content="2022 JSCPC K 最构造的一集原题链接：2022 JSCPC K 思路为了方便，将nunhehhe称为x。 当n&#x3D;0时显然随便一个数都可以。 当n&#x3D;1时只需要再原字符串上加一个a即可。 先观察规律，在x后如果补一个h，此h后面a的个数为m，那么这个h的贡献为2^m-1。不是2^m是因为最后不能为空。 补h的作用就是和x最后的作替换，从而转换为一个按位运算的问题，由cnt">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-04-27T13:43:21.000Z">
-<meta property="article:modified_time" content="2024-04-27T13:45:42.844Z">
+<meta property="article:published_time" content="2024-04-29T09:25:34.000Z">
+<meta property="article:modified_time" content="2024-04-29T09:54:25.699Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="Codeforces">
+<meta property="article:tag" content="JSCPC">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Codeforces940C - Shepherdz</title>
+  <title>2022JSCPCK - Shepherdz</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Codeforces940C"></span>
+            <span id="subtitle" data-typed-text="2022JSCPCK"></span>
           
         </div>
 
@@ -209,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-04-27 21:43" pubdate>
-          April 27, 2024 pm
+        <time datetime="2024-04-29 17:25" pubdate>
+          April 29, 2024 pm
         </time>
       </span>
     
@@ -221,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          293 words
+          456 words
         
       </span>
     
@@ -232,7 +231,7 @@
         
         
         
-          3 mins
+          4 mins
         
       </span>
     
@@ -269,19 +268,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Codeforces940C</h1>
+            <h1 id="seo-header">2022JSCPCK</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Codeforces-940-C"><a href="#Codeforces-940-C" class="headerlink" title="Codeforces 940 C"></a>Codeforces 940 C</h1><p>首先对原棋盘进行预处理，将已经下棋的对应行删除，得到一个n*n的空白棋盘。</p>
-<p>显然如果暴力根本过不了，那么接下来就考虑纯数学方法与dp，这里介绍一下dp。</p>
-<p>设dp[i]为i*i的棋盘的方案数，思考dp[i-1],dp[i-2]与dp[i]的关系。</p>
-<p>可对dp[i]左上角是否为空进行讨论。</p>
-<p>若dp[i]左上角不为空，则左上角不为空的方案数为dp[i-1]，即将dp[i-1]的左上角补一个棋。</p>
-<p>若dp[i]左上角为空，则第一行棋子的摆放可能有n-1种，相应的，第一列的棋子摆放有n-1种。</p>
-<p>故dp[i]&#x3D;dp[i-1]+2*(n-1)dp[i-2]。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n,k;<br><span class="hljs-type">int</span> t;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> MOD=<span class="hljs-number">1e9</span>+<span class="hljs-number">7</span>;<br><span class="hljs-type">long</span> <span class="hljs-type">long</span> dp[<span class="hljs-number">300005</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    dp[<span class="hljs-number">1</span>]=<span class="hljs-number">1</span>;<br>    dp[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>;i&lt;=<span class="hljs-number">300005</span>;i++)&#123;<br>        dp[i]=dp[i<span class="hljs-number">-1</span>]+<span class="hljs-number">2</span>*(i<span class="hljs-number">-1</span>)*dp[i<span class="hljs-number">-2</span>];<br>        dp[i]%=MOD;<br>    &#125;<br>    cin&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)&#123;<br>        cin&gt;&gt;n&gt;&gt;k;<br>        <span class="hljs-type">int</span> a,b;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++)&#123;<br>            cin&gt;&gt;a&gt;&gt;b;<br>            <span class="hljs-keyword">if</span>(a==b)n--;<br>            <span class="hljs-keyword">else</span> n-=<span class="hljs-number">2</span>;<br>        &#125;<br>        cout&lt;&lt;dp[n]&lt;&lt;endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+                <h1 id="2022-JSCPC-K-最构造的一集"><a href="#2022-JSCPC-K-最构造的一集" class="headerlink" title="2022 JSCPC K 最构造的一集"></a>2022 JSCPC K 最构造的一集</h1><p>原题链接：<a target="_blank" rel="noopener" href="https://codeforces.com/gym/103743/problem/K">2022 JSCPC K</a></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>为了方便，将nunhehhe称为x。</p>
+<p>当n&#x3D;0时显然随便一个数都可以。</p>
+<p>当n&#x3D;1时只需要再原字符串上加一个a即可。</p>
+<p>先观察规律，在x后如果补一个h，此h后面a的个数为m，那么这个h的贡献为2^m-1。不是2^m是因为最后不能为空。</p>
+<p>补h的作用就是和x最后的作替换，从而转换为一个按位运算的问题，由cnt记录多少个2^m-1，然后在最后一个a前补n个h即可。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> t;<br><span class="hljs-type">int</span> n;<br>vector&lt;<span class="hljs-type">int</span>&gt;arr;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    cin&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)&#123;<br>        cin&gt;&gt;n;<br>        string s;<br>        <span class="hljs-keyword">if</span>(n==<span class="hljs-number">0</span>)&#123;<br>            cout&lt;&lt;<span class="hljs-string">&quot;valorant&quot;</span>&lt;&lt;endl;<span class="hljs-comment">//打瓦打的</span><br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)&#123;<br>            cout&lt;&lt;<span class="hljs-string">&quot;nunhehheha&quot;</span>&lt;&lt;endl;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">30</span>;i++)&#123;<br>            <span class="hljs-keyword">if</span>(n&amp;(<span class="hljs-number">1</span>&lt;&lt;i))&#123;<br>                arr.<span class="hljs-built_in">push_back</span>(i<span class="hljs-number">-1</span>);<span class="hljs-comment">//将为1的位放入arr中</span><br>                cnt++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(n&amp;<span class="hljs-number">1</span>)cnt++;<span class="hljs-comment">//特判</span><br>        <span class="hljs-type">int</span> pre=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;arr.<span class="hljs-built_in">size</span>();i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;arr[i]-pre;j++)&#123;<br>                s+=<span class="hljs-string">&#x27;a&#x27;</span>;<span class="hljs-comment">//由于是从最小位开始，故应将a放h前，最后倒置</span><br>            &#125;<br>            s+=<span class="hljs-string">&#x27;h&#x27;</span>;<br>            pre=arr[i];<span class="hljs-comment">//当某位不为1时，应只输出a即可</span><br>        &#125;<br>        <span class="hljs-built_in">reverse</span>(s.<span class="hljs-built_in">begin</span>(),s.<span class="hljs-built_in">end</span>());<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=cnt;i++)s+=<span class="hljs-string">&#x27;h&#x27;</span>;<br>        s+=<span class="hljs-string">&#x27;a&#x27;</span>;<span class="hljs-comment">//在最后补a</span><br>        cout&lt;&lt;<span class="hljs-string">&quot;nunhehhe&quot;</span>&lt;&lt;s&lt;&lt;endl;<br>        arr.<span class="hljs-built_in">clear</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br> <br></code></pre></td></tr></table></figure>
+
+
+<h3 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h3><p>做这道题从读题，自己写，翻题解，到最终理解花了两个小时时间。</p>
+<p>马上还有十几天就省赛了，虽然是打星队，但还是慌得一比，这种应该属于简单构造，自己还是做不好，正好又碰上蓝桥杯拉胯，感觉焦虑又无力。</p>
+<p>唉唉，慢慢来吧。</p>
 
                 
               </div>
@@ -315,9 +318,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
-      
-        <a href="/tags/Codeforces/" class="print-no-link">#Codeforces</a>
+        <a href="/tags/JSCPC/" class="print-no-link">#JSCPC</a>
       
     </div>
   
@@ -329,8 +330,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Codeforces940C</div>
-      <div>http://example.com/2024/04/27/Codeforces940C/</div>
+      <div>2022JSCPCK</div>
+      <div>http://example.com/2024/04/29/2022JSCPCK/</div>
     </div>
     <div class="license-meta">
       
@@ -342,7 +343,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>April 27, 2024</div>
+          <div>April 29, 2024</div>
         </div>
       
       
@@ -374,18 +375,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/29/2022JSCPCK/" title="2022JSCPCK">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">2022JSCPCK</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/04/27/Codeforces938E/" title="Codeforces938E">
-                        <span class="hidden-mobile">Codeforces938E</span>
+                      <a href="/2024/04/27/Codeforces940C/" title="Codeforces940C">
+                        <span class="hidden-mobile">Codeforces940C</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
