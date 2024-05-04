@@ -16,15 +16,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Codeforces 938 E题目链接：Codeforces 938 E 思路思路是由大到小暴力枚举每个k，然后从左往右枚举，遇0则将包括0的后k位全部转变，若处理完的数列全部为0，则输出k。 对算法时间复杂度的维护若朴素写，时间复杂度在n^3，是无法通过的，故需要进行优化使其达到n^2。 开一个计数器cnt与记录当前位置是否发生转换的数组end。 cnt决定当前位置偏转的次数，每次发生偏转时，">
+    <meta name="description" content="Codeforces 938 E题目链接：Codeforces 938 E 思路思路是由大到小暴力枚举每个k，然后从左往右枚举，遇0则将包括0的后k位全部转变，若处理完的数列全部为0，则输出k。 对算法时间复杂度的维护若朴素写，时间复杂度在$n^3$，是无法通过的，故需要进行优化使其达到$n^2$。 开一个计数器cnt与记录当前位置是否发生转换的数组end。 cnt决定当前位置偏转的次数，每次发生">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces938E">
 <meta property="og:url" content="https://shepherdzzx.github.io/Codeforces938E/index.html">
 <meta property="og:site_name" content="Shepherdz">
-<meta property="og:description" content="Codeforces 938 E题目链接：Codeforces 938 E 思路思路是由大到小暴力枚举每个k，然后从左往右枚举，遇0则将包括0的后k位全部转变，若处理完的数列全部为0，则输出k。 对算法时间复杂度的维护若朴素写，时间复杂度在n^3，是无法通过的，故需要进行优化使其达到n^2。 开一个计数器cnt与记录当前位置是否发生转换的数组end。 cnt决定当前位置偏转的次数，每次发生偏转时，">
+<meta property="og:description" content="Codeforces 938 E题目链接：Codeforces 938 E 思路思路是由大到小暴力枚举每个k，然后从左往右枚举，遇0则将包括0的后k位全部转变，若处理完的数列全部为0，则输出k。 对算法时间复杂度的维护若朴素写，时间复杂度在$n^3$，是无法通过的，故需要进行优化使其达到$n^2$。 开一个计数器cnt与记录当前位置是否发生转换的数组end。 cnt决定当前位置偏转的次数，每次发生">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-27T08:56:26.000Z">
-<meta property="article:modified_time" content="2024-04-27T09:11:48.588Z">
+<meta property="article:modified_time" content="2024-05-04T03:44:17.594Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="Codeforces">
@@ -83,7 +83,11 @@
 
 
   
-<meta name="generator" content="Hexo 7.1.1"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.1.1"></head>
 
 
 <body>
@@ -221,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          339 words
+          338 words
         
       </span>
     
@@ -276,9 +280,9 @@
                 
                 <h1 id="Codeforces-938-E"><a href="#Codeforces-938-E" class="headerlink" title="Codeforces 938 E"></a>Codeforces 938 E</h1><p>题目链接：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1955/problem/E">Codeforces 938 E</a></p>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>思路是由大到小暴力枚举每个k，然后从左往右枚举，遇0则将包括0的后k位全部转变，若处理完的数列全部为0，则输出k。</p>
-<h3 id="对算法时间复杂度的维护"><a href="#对算法时间复杂度的维护" class="headerlink" title="对算法时间复杂度的维护"></a>对算法时间复杂度的维护</h3><p>若朴素写，时间复杂度在n^3，是无法通过的，故需要进行优化使其达到n^2。</p>
+<h3 id="对算法时间复杂度的维护"><a href="#对算法时间复杂度的维护" class="headerlink" title="对算法时间复杂度的维护"></a>对算法时间复杂度的维护</h3><p>若朴素写，时间复杂度在$n^3$，是无法通过的，故需要进行优化使其达到$n^2$。</p>
 <p>开一个计数器cnt与记录当前位置是否发生转换的数组end。</p>
-<p>cnt决定当前位置偏转的次数，每次发生偏转时，cnt++，而end[i+k]++代表第i位发生偏转，因为当i&#x3D;i+k时，cnt会减去end[i]，使cnt始终等于对第i位数的操作次数。</p>
+<p>cnt决定当前位置偏转的次数，每次发生偏转时，cnt++，而end[i+k]++代表第i位发生偏转，因为当i=i+k时，cnt会减去end[i]，使cnt始终等于对第i位数的操作次数。</p>
 <p>代码如下：</p>
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n;<br>string s;<br><span class="hljs-type">int</span> t;<br>vector&lt;<span class="hljs-type">int</span>&gt;arr;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    cin&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)&#123;<br>        cin&gt;&gt;n&gt;&gt;s;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>            arr.<span class="hljs-built_in">push_back</span>(s[i]-<span class="hljs-string">&#x27;0&#x27;</span>);<br>        &#125;<br>        vector&lt;<span class="hljs-type">int</span>&gt;index=arr;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> k=n;k&gt;=<span class="hljs-number">1</span>;k--)&#123;<br>            vector&lt;<span class="hljs-type">int</span>&gt;<span class="hljs-built_in">end</span>(n+<span class="hljs-number">1</span>);<br>            <span class="hljs-built_in">fill</span>(end.<span class="hljs-built_in">begin</span>(),end.<span class="hljs-built_in">end</span>(),<span class="hljs-number">0</span>);<br>            <span class="hljs-type">int</span> cnt=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>                cnt-=end[i];<br>                <span class="hljs-keyword">if</span>(cnt%<span class="hljs-number">2</span>==<span class="hljs-number">1</span>)&#123;<br>                    arr[i]^=<span class="hljs-number">1</span>;<br>                &#125;<br>                <span class="hljs-keyword">if</span>(arr[i]==<span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-keyword">if</span>(i+k&lt;=n)&#123;<br>                        end[i+k]++;<br>                        cnt++;<br>                        arr[i]=<span class="hljs-number">1</span>;<br>                    &#125;<br>                    <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            vector&lt;<span class="hljs-type">int</span>&gt;::iterator p=<span class="hljs-built_in">find</span>(arr.<span class="hljs-built_in">begin</span>(),arr.<span class="hljs-built_in">end</span>(),<span class="hljs-number">0</span>);<br>            <span class="hljs-keyword">if</span>(p==arr.<span class="hljs-built_in">end</span>())&#123;<br>                cout&lt;&lt;k&lt;&lt;endl;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-keyword">else</span> arr=index;<br>        &#125;<br>        arr.<span class="hljs-built_in">clear</span>();<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -441,6 +445,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -634,6 +644,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
