@@ -8,81 +8,83 @@ code.hljs {
 }
 /*
 
-vim-hybrid theme by w0ng (https://github.com/w0ng/vim-hybrid)
+Atom One Dark by Daniel Gamage
+Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
+
+base:    #282c34
+mono-1:  #abb2bf
+mono-2:  #818896
+mono-3:  #5c6370
+hue-1:   #56b6c2
+hue-2:   #61aeee
+hue-3:   #c678dd
+hue-4:   #98c379
+hue-5:   #e06c75
+hue-5-2: #be5046
+hue-6:   #d19a66
+hue-6-2: #e6c07b
 
 */
 .hljs {
-  background: #1d1f21;
-  color: #c5c8c6
+  color: #abb2bf;
+  background: #282c34
 }
-/*selection color*/
-.hljs::selection,
-.hljs span::selection {
-  background: #373b41
-}
-.hljs::-moz-selection,
-.hljs span::-moz-selection {
-  background: #373b41
-}
-/*color: fg_yellow*/
-.hljs-title,
-.hljs-name {
-  color: #f0c674
-}
-/*color: fg_comment*/
 .hljs-comment,
-.hljs-meta,
-.hljs-meta .hljs-keyword {
-  color: #707880
+.hljs-quote {
+  color: #5c6370;
+  font-style: italic
 }
-/*color: fg_red*/
-.hljs-number,
-.hljs-symbol,
-.hljs-literal,
-.hljs-deletion,
-.hljs-link {
-  color: #cc6666
-}
-/*color: fg_green*/
-.hljs-string,
 .hljs-doctag,
-.hljs-addition,
-.hljs-regexp,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #b5bd68
-}
-/*color: fg_purple*/
-.hljs-attribute,
-.hljs-code,
-.hljs-selector-id {
-  color: #b294bb
-}
-/*color: fg_blue*/
 .hljs-keyword,
-.hljs-selector-tag,
-.hljs-bullet,
-.hljs-tag {
-  color: #81a2be
+.hljs-formula {
+  color: #c678dd
 }
-/*color: fg_aqua*/
-.hljs-subst,
-.hljs-variable,
-.hljs-template-tag,
-.hljs-template-variable {
-  color: #8abeb7
-}
-/*color: fg_orange*/
-.hljs-type,
-.hljs-built_in,
-.hljs-quote,
 .hljs-section,
-.hljs-selector-class {
-  color: #de935f
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75
+}
+.hljs-literal {
+  color: #56b6c2
+}
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta .hljs-string {
+  color: #98c379
+}
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66
+}
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee
+}
+.hljs-built_in,
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: #e6c07b
 }
 .hljs-emphasis {
   font-style: italic
 }
 .hljs-strong {
   font-weight: bold
+}
+.hljs-link {
+  text-decoration: underline
 }
