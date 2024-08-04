@@ -25,7 +25,7 @@
 <meta property="og:description" content="2024牛客多校2部分题目">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-07-24T09:03:41.000Z">
-<meta property="article:modified_time" content="2024-08-04T03:47:21.983Z">
+<meta property="article:modified_time" content="2024-08-04T03:50:00.306Z">
 <meta property="article:author" content="Shepherdz">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="牛客">
@@ -283,7 +283,7 @@
 <p>首先我们需要明确，对与$ NM$的图，边缘的线头一定有$ 2(NM)$个，故曲线的最少为NM。</p>
 <p>再考虑曲线最多的情况，显然，曲线最少时内部没有环，而曲线增多便是要在内部增加环的数量。</p>
 <p>若要构造单位圆，显然最优为</p>
-<p>$$<br>\begin{matrix}<br>A &amp; B  \<br>B &amp; A  \<br>\end{matrix}<br>$$</p>
+<p>$$<br>\begin{matrix}<br>A &amp; B  \\<br>B &amp; A  \\<br>\end{matrix}<br>$$</p>
 <p>但是由于已经确定了一个位置，故可能此排放的顺序有偏差（例如左上角的位置需为B）</p>
 <p>故若左上角为A，最多有$N+M+ \lfloor ((N-1)(M-1)+1)&#x2F;2 \rfloor$</p>
 <p>若左上角为B，最多有 $ N+M+ \lfloor ((N-1)(M-1)+1)&#x2F;2 \rfloor $</p>
