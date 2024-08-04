@@ -119,14 +119,14 @@
 
   
   <url>
-    <loc>https://shepherdzzx.github.io/tags/XCPC/</loc>
+    <loc>https://shepherdzzx.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://shepherdzzx.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://shepherdzzx.github.io/tags/XCPC/</loc>
     <lastmod>2024-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -141,13 +141,6 @@
   
   <url>
     <loc>https://shepherdzzx.github.io/tags/Codeforces/</loc>
-    <lastmod>2024-08-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://shepherdzzx.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2024-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -174,6 +167,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://shepherdzzx.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2024-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -184,14 +184,14 @@
   </url>
   
   <url>
-    <loc>https://shepherdzzx.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
+    <loc>https://shepherdzzx.github.io/categories/%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2024-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://shepherdzzx.github.io/categories/%E6%9D%82%E8%B0%88/</loc>
+    <loc>https://shepherdzzx.github.io/categories/%E6%97%A5%E5%B8%B8/</loc>
     <lastmod>2024-08-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
