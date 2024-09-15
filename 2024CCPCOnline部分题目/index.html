@@ -25,7 +25,7 @@
 <meta property="og:description" content="2024CCPCOnline部分题目">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-11T09:00:22.000Z">
-<meta property="article:modified_time" content="2024-09-11T10:10:35.364Z">
+<meta property="article:modified_time" content="2024-09-15T02:55:33.203Z">
 <meta property="article:author" content="Shepherdz">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="CCPC">
@@ -237,7 +237,7 @@
         
         
         
-          9 mins
+          10 mins
         
       </span>
     
@@ -298,7 +298,7 @@
 <p>若(sum1&gt;&gt;i)&amp;1与(sum2&gt;&gt;i)&amp;1均为1，则sum1^d[i] , sum2^d[i]</p>
 <p>若(sum1&gt;&gt;i)&amp;1与(sum2&gt;&gt;i)&amp;1不相等时，需要考虑前一位的。</p>
 <ol>
-<li>若为需对 i 位进行处理，这样会使大的变小，小的变大</li>
+<li>若为$\begin{matrix}1 &amp; 1\\ 0 &amp;0\end{matrix}$需对 i 位进行处理，这样会使大的变小，小的变大</li>
 <li>若为$\begin{matrix}1 &amp; 0\\ 0 &amp;1\end{matrix}$我们对 i 位不处理</li>
 <li>若为$\begin{matrix}1 &amp; 0\\ 1 &amp;1\end{matrix}$或$\begin{matrix}0 &amp; 1 \\ 0 &amp; 0\end{matrix}$我们不确定是否需要处理，那就都算一遍，取min，且不论取不取，大小关系已确定，后面的位处理时只需要无脑让大的变小即可、</li>
 </ol>
