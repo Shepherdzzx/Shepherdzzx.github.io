@@ -226,7 +226,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          287 words
+          286 words
         
       </span>
     
@@ -285,7 +285,7 @@
 <p>可对$dp_i$左上角是否为空进行讨论。</p>
 <p>若$dp_i$左上角不为空，则左上角不为空的方案数为$dp_{i-1}$，即将$dp_{i-1}$的左上角补一个棋。</p>
 <p>若$dp_i$左上角为空，则第一行棋子的摆放可能有n-1种，相应的，第一列的棋子摆放有n-1种。</p>
-<p>故$dp_i&#x3D;dp_{i-1}+2*(n-1)dp_{i-2}$。</p>
+<p>故$dp_i=dp_{i-1}+2*(n-1)dp_{i-2}$。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-type">int</span> n,k;<br><span class="hljs-type">int</span> t;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> MOD=<span class="hljs-number">1e9</span>+<span class="hljs-number">7</span>;<br><span class="hljs-type">long</span> <span class="hljs-type">long</span> dp[<span class="hljs-number">300005</span>];<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    dp[<span class="hljs-number">1</span>]=<span class="hljs-number">1</span>;<br>    dp[<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>;i&lt;=<span class="hljs-number">300005</span>;i++)&#123;<br>        dp[i]=dp[i<span class="hljs-number">-1</span>]+<span class="hljs-number">2</span>*(i<span class="hljs-number">-1</span>)*dp[i<span class="hljs-number">-2</span>];<br>        dp[i]%=MOD;<br>    &#125;<br>    cin&gt;&gt;t;<br>    <span class="hljs-keyword">while</span>(t--)&#123;<br>        cin&gt;&gt;n&gt;&gt;k;<br>        <span class="hljs-type">int</span> a,b;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++)&#123;<br>            cin&gt;&gt;a&gt;&gt;b;<br>            <span class="hljs-keyword">if</span>(a==b)n--;<br>            <span class="hljs-keyword">else</span> n-=<span class="hljs-number">2</span>;<br>        &#125;<br>        cout&lt;&lt;dp[n]&lt;&lt;endl;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
 
                 
