@@ -15,25 +15,24 @@
   
   <meta name="theme-color" content="#2f4154">
   <meta name="author" content="Shepherdz">
-  <meta name="keywords" content="洛谷">
+  <meta name="keywords" content="Merry Christmas">
   
-    <meta name="description" content="2024第二轮CSP-S-Color">
+    <meta name="description" content="Merry Christmas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2024第二轮CSP-S-Color">
-<meta property="og:url" content="https://shepherdzzx.github.io/2024%E7%AC%AC%E4%BA%8C%E8%BD%AECSP-S-Color/index.html">
+<meta property="og:title" content="Merry Christmas">
+<meta property="og:url" content="https://shepherdzzx.github.io/Merry-Christmas/index.html">
 <meta property="og:site_name" content="Shepherdz">
-<meta property="og:description" content="2024第二轮CSP-S-Color">
+<meta property="og:description" content="Merry Christmas">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-11-07T02:50:19.000Z">
-<meta property="article:modified_time" content="2024-11-07T04:36:34.133Z">
+<meta property="article:published_time" content="2024-12-25T02:30:01.301Z">
+<meta property="article:modified_time" content="2024-12-25T02:31:44.922Z">
 <meta property="article:author" content="Shepherdz">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="洛谷">
+<meta property="article:tag" content="杂谈">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>2024第二轮CSP-S-Color - Shepherdz</title>
+  <title>Merry Christmas - Shepherdz</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -203,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="2024第二轮CSP-S-Color"></span>
+            <span id="subtitle" data-typed-text="Merry Christmas"></span>
           
         </div>
 
@@ -214,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-11-07 10:50" pubdate>
-          November 7, 2024 am
+        <time datetime="2024-12-25 10:30" pubdate>
+          December 25, 2024 am
         </time>
       </span>
     
@@ -226,7 +225,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          543 words
+          996 words
         
       </span>
     
@@ -237,7 +236,7 @@
         
         
         
-          5 mins
+          9 mins
         
       </span>
     
@@ -274,32 +273,22 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">2024第二轮CSP-S-Color</h1>
+            <h1 id="seo-header">Merry Christmas</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="2024第二轮CSP-S-color"><a href="#2024第二轮CSP-S-color" class="headerlink" title="2024第二轮CSP-S color"></a>2024第二轮CSP-S color</h1><p>题目链接：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P11233">Color</a></p>
-<p>首先想到dp</p>
-<p>设$ f[i]$为枚举到第 i 位时得分的最大值。</p>
-<p>先简单思考一下：</p>
-<ol>
-<li>当前 i-1位都没有与$ a[i]$相同的值时，$ f[i]=f[i-1]$。</li>
-<li>当$a[i-1]=a[i]$时，要么与 i-1位同一颜色，此时$ f[i]=a[i]+f[i-2]$，要么与 i-1位不同颜色，此时$ f[i]$为$ f[i-1]$</li>
-</ol>
-<p>那么当与$ a[i]$相同的不在 i-1位上，而是在 j 位上呢？</p>
-<p>此时有两种选择：</p>
-<ol>
-<li>左边第一个颜色相同的就是 j 。与 j 位颜色相同，且此时 i 位与 j 位间颜色一样且与 i 位颜色不同</li>
-<li>左边第一个颜色相同的不是 j。</li>
-</ol>
-<p>设$ g[i][j]$为第 i 位到第 j 位颜色相同时的贡献值。</p>
-<p>此时$ f[i]=max(f[i-1],f[j-1]+g[i][j]+a[i])$</p>
-<p>注意：j 位为与$a[i]$相同的左侧最靠近$a[i]$的序号，易证明取左侧最靠近的最优。</p>
-<p>由于数据范围的限制，$g[i][j]$需用前缀和处理。</p>
-<p>由于 j 位颜色不做要求，且 j+1位定与 j 位不同，故可取$f[j+1]+pre[i-1]-pre[j+1]+a[i]$。此时$ f[i+1]$会直接决定 j 位与 j+1位的取值。</p>
-<p>由于相等的两数可能相邻，取$f[j+1]+pre[i]-pre[j+1]+a[i]$。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> il inline</span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-meta">#<span class="hljs-keyword">define</span> int long long</span><br><span class="hljs-type">const</span> <span class="hljs-type">int</span> N=<span class="hljs-number">2e5</span>+<span class="hljs-number">5</span>,inf=<span class="hljs-number">2333333</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> M=<span class="hljs-number">1e6</span>+<span class="hljs-number">5</span>;<br><span class="hljs-type">int</span> pre[N];<br><span class="hljs-type">int</span> f[N];<br><span class="hljs-type">int</span> last[M];<br><span class="hljs-type">int</span> a[N];<br><span class="hljs-type">int</span> n;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;<br>	<span class="hljs-built_in">fill</span>(pre,pre+<span class="hljs-number">1</span>+n,<span class="hljs-number">0</span>);<br>	<span class="hljs-built_in">fill</span>(f,f+<span class="hljs-number">1</span>+n,<span class="hljs-number">0</span>);<br>	<span class="hljs-built_in">fill</span>(last+<span class="hljs-number">1</span>,last+M,<span class="hljs-number">0</span>);<br>	<span class="hljs-built_in">fill</span>(a+<span class="hljs-number">1</span>,a+<span class="hljs-number">1</span>+n,<span class="hljs-number">0</span>);<br>&#125;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;<br>	cin&gt;&gt;n;<br>	<span class="hljs-built_in">init</span>();<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)cin&gt;&gt;a[i];<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">2</span>;i&lt;=n;i++)&#123;<br>		<span class="hljs-keyword">if</span>(a[i]==a[i<span class="hljs-number">-1</span>])&#123;<br>			pre[i]=pre[i<span class="hljs-number">-1</span>]+a[i];<br>		&#125;<br>		<span class="hljs-keyword">else</span> pre[i]=pre[i<span class="hljs-number">-1</span>];<br>	&#125;<br>	<span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<br>		f[i]=f[i<span class="hljs-number">-1</span>];<br>		<span class="hljs-keyword">if</span>(last[a[i]]!=<span class="hljs-number">0</span>) &#123;<br>			f[i]=<span class="hljs-built_in">max</span>(f[i<span class="hljs-number">-1</span>],f[last[a[i]]+<span class="hljs-number">1</span>]+a[i]+pre[i]-pre[last[a[i]]+<span class="hljs-number">1</span>]);<br>		&#125;<br>		last[a[i]]=i;<br>	&#125;<br>	<span class="hljs-comment">//for(int i=1;i&lt;=n;i++)cout&lt;&lt;f[i]&lt;&lt;&#x27; &#x27;;</span><br>	<span class="hljs-comment">//cout&lt;&lt;endl;</span><br>	cout&lt;&lt;f[n]&lt;&lt;endl;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>	ios::<span class="hljs-built_in">sync_with_stdio</span>(<span class="hljs-number">0</span>);<br>	cin.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>	cout.<span class="hljs-built_in">tie</span>(<span class="hljs-number">0</span>);<br>	<span class="hljs-type">int</span> t=<span class="hljs-number">1</span>;<br>	cin&gt;&gt;t;<br>	<span class="hljs-keyword">while</span>(t--)&#123;<br>		<span class="hljs-built_in">solve</span>();<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+                <h1 id="Merry-Christmas"><a href="#Merry-Christmas" class="headerlink" title="Merry Christmas"></a>Merry Christmas</h1><p>从HK回来以后，今年也进入了尾声，回顾一年虽然吃了不少挫折但是成长也很大，所以在圣诞节写一下今年的回顾与总结。</p>
+<p>寒假：说实话今年寒假的印象已经几乎没有了，只记得被寒假训练搞的很累，每天只能过一两个题的样子，导致最后很多没写，所幸是坚持下来了。作为基础最差的ACM队员，自己坚持下来还是觉得不可思议（笑）</p>
+<p>春天：在春天打了第一场有意义的比赛：江苏省赛。虽然说省赛是打星参赛，不过最后还是进了铜牌区（虽然基本靠队友C）。有一说一，如果不是群里队友捞我，可能真的就要因为找不到队友放弃打A了。</p>
+<p>暑假：暑假的大部分时间都在牛客多校，不得不说五个小时真的强度非常高，在前几场我们都是垫底的水平，不过后几场感觉好起来了，感觉虽然不如大三老登，但也不赖，主要是题的难度让人有点坐牢</p>
+<p>网络赛：网络赛第一场打的很烂，一道比较简单的区间dp的题不会做，最后补了网络流和线性基。<br>第二场所有人都很坐牢，最后甚至靠罚时偷了个第一回来。第三场钱哥血C，但在一道绿题上死活不会做，又是倒一。</p>
+<p>南京站：南京站应该是问题最多最爆的一次。首先是出现了网络赛从没出现的问题：没写完。这个感觉和开题顺序有很大关系。然后是后面因为心态爆炸都不说话了，导致大伙最后能多做一道却没做到。南京站也是让我清晰认识到自己的差距，因为自己犯罪了。</p>
+<p>HK站：HK站虽然也打铁，但个人感觉是比南京站强一点的。首先是自己C了：开了签到，hack了钱哥的代码。感觉我们的问题有两点：第一是hack能力和长代码不强，对钱哥的代码看了将近四个小时才hack出来。如果能在2h内hack出来，那别的题还能再开一道。第二是如果有一道题被卡了，就没心情做别的题。说实话思想活跃起来去做构造是在K过了以后，活跃起来以后构造很快就有了思路，也就说明在K开出来之前思想是不活跃的，没有积极去解决问题的，这一点也需要改。</p>
+<p>今年在别的方面也学到不少东西，比如hexo搭建blog，做PA（不过PA还没来得及多做），学了杂七杂八的技术。</p>
+<p>在当部长这方面也是头一次，虽然高中也当过课代表和组长之类的，但是在当部长上还是犯了很多错，好在都是小错，自己改正也及时。在一开始选人时也是狠狠体验一把HR的感觉（乐），这也让我知道很多时候应聘不上并不是因为你真的不如别人，而是面试官真的没时间多看，筛的也比较随意。今年几次义务维修还有很多东西没教部员们，其中有一些我也很生疏，这些就明年再说吧。学生部门在我的心中应该是帮助大一学生熟悉学校，了解学校的途径，学不学的到东西不重要，开心最重要。希望明年部员能去积极当部长吧，23届有点太不积极了。</p>
+<p>长的不期盼了，希望今年寒假能够再接再厉，狠狠加训，早点把队伍的实力提升到铜牌水平，也可以试试用黑曜石来记录一下日记。</p>
+<p>Merry Christmas！</p>
 
                 
               </div>
@@ -318,7 +307,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  <a href="/categories/%E6%9D%82%E8%B0%88/" class="category-chain-item">杂谈</a>
   
   
 
@@ -333,9 +322,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
-      
-        <a href="/tags/%E6%B4%9B%E8%B0%B7/" class="print-no-link">#洛谷</a>
+        <a href="/tags/%E6%9D%82%E8%B0%88/" class="print-no-link">#杂谈</a>
       
     </div>
   
@@ -347,8 +334,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>2024第二轮CSP-S-Color</div>
-      <div>https://shepherdzzx.github.io/2024第二轮CSP-S-Color/</div>
+      <div>Merry Christmas</div>
+      <div>https://shepherdzzx.github.io/Merry-Christmas/</div>
     </div>
     <div class="license-meta">
       
@@ -360,7 +347,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>November 7, 2024</div>
+          <div>December 25, 2024</div>
         </div>
       
       
@@ -392,18 +379,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Merry-Christmas/" title="Merry Christmas">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Merry Christmas</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/ICPConline%E9%83%A8%E5%88%86%E9%A2%98%E7%9B%AE/" title="2024ICPConline部分题目">
-                        <span class="hidden-mobile">2024ICPConline部分题目</span>
+                      <a href="/2024%E7%AC%AC%E4%BA%8C%E8%BD%AECSP-S-Color/" title="2024第二轮CSP-S-Color">
+                        <span class="hidden-mobile">2024第二轮CSP-S-Color</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
